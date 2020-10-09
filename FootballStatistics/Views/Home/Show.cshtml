@@ -1,0 +1,24 @@
+﻿@using FootballStatistics.Statistics.Realization;
+@model Statistic
+@{
+    ViewData["Title"] = "Ліги";
+}
+    <div class="text-center">
+        <div>
+            <p><b>Найкраща атакуюча команда</b></p>
+            @{FootballTeam teamMaxGoals = @Model.MaxGoals();}
+            <p>@teamMaxGoals.Name, м'ячів забито @teamMaxGoals.GoalsScored, м'ячів пропущено @teamMaxGoals.MissedBalls </p>
+        </div>
+        <div>
+            <p><b>Найкраща захисна команда</b></p>
+            @{FootballTeam teamMinMissed = @Model.MinMissBalls();}
+            <p>@teamMinMissed.Name, м'ячів забито @teamMinMissed.GoalsScored, м'ячів пропущено @teamMinMissed.MissedBalls </p>
+        </div>
+        <div>
+            <p><b>Найкраще співвідношення забиті-пропущені</b></p>
+            @{FootballTeam teamBestScoredMissed = @Model.BestScoredMissed();}
+            <p>@teamBestScoredMissed.Name, м'ячів забито @teamBestScoredMissed.GoalsScored, м'ячів пропущено @teamBestScoredMissed.MissedBalls </p>
+        </div>
+    </div>
+        
+
